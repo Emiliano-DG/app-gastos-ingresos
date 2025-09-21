@@ -4,11 +4,15 @@ import { supabase } from "../supabase/supabase.config";
 export const useAuthStore = create((set) => ({
   isAuth: false,
   user: null,
+  loading: true,
 
   signInWithGoogle: async () => {
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
+        options: {
+          redirectTo: "http://localhost:5173/", // ajusta al puerto de tu proyecto
+        },
       });
       if (error) throw error;
       return data;
@@ -17,6 +21,7 @@ export const useAuthStore = create((set) => ({
       return null;
     }
   },
+
   signOut: async () => {
     try {
       const { error } = await supabase.auth.signOut();
@@ -28,7 +33,8 @@ export const useAuthStore = create((set) => ({
   },
 
   setSession: (session) => {
+    console.log("setSession", session);
     //actualizar el estado cuando supabase detecta sesion
-    set({ isAuth: !!session, user: session?.user || null }); // !!{..} = true || !!null = false
+    set({ isAuth: !!session, user: session?.user || null, loading: false }); // !!{..} = true || !!null = false
   },
 }));
