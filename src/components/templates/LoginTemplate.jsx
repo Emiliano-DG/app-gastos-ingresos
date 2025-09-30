@@ -1,5 +1,7 @@
 import { useAuthStore } from "../../store/AuthStore";
 import { BtnSave } from "../moleculas/BtnSave";
+// import { FcGoogle } from "react-icons/fc";
+import { Icon } from "../atomos/Icons";
 
 export const LoginTemplate = ({
   version,
@@ -22,7 +24,11 @@ export const LoginTemplate = ({
       </div>
       <h1 className="text-6xl font-bold text-center">{titulo}</h1>
       <p className="text-[#909090] font-lg text-center">{subtitulo}</p>
-      <BtnSave titulo={btnTitulo} action={() => signInWithGoogle()} />
+      <BtnSave
+        titulo={btnTitulo}
+        icon={() => <Icon name="inicio" />}
+        action={() => signInWithGoogle()}
+      />
     </div>
   );
 };

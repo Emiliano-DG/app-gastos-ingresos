@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "@/pages/Home";
 import { Login } from "@/pages/Login";
 import { ProtectedRoute } from "../hooks/ProtectedRoute";
@@ -8,17 +8,15 @@ export const MyRoutes = () => {
   const user = useAuthStore((state) => state.user);
   const loading = useAuthStore((state) => state.loading);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />}></Route>
-        <Route
-          element={
-            <ProtectedRoute user={user} redirectTo="/login" loading={loading} />
-          }
-        >
-          <Route path="/" element={<Home />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<Login />}></Route>
+      <Route
+        element={
+          <ProtectedRoute user={user} redirectTo="/login" loading={loading} />
+        }
+      >
+        <Route path="/" element={<Home />}></Route>
+      </Route>
+    </Routes>
   );
 };

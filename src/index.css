@@ -2,6 +2,14 @@
 
 :root {
   --font-family-base: 'Poppins', sans-serif;
+  --sidebar-width: 300px;
+  --sidebar-width-initial: 10vw;
+  --sm-spacing: 8px;  /* USADO */
+  --md-spacing: 16px;
+  --lg-spacing: 24px;
+  --xl-spacing: 32px;
+  --xxl-spacing: 48px;
+  --border-radius: 6px;
 }
 
 body {
@@ -12,21 +20,35 @@ body {
 @theme {
 
     --color-Secundario: #DAC1FF;
-    --color-Principal: #00F34A
+    --color-Principal: #00F34A;
+     --color-bgtgderecha: "#fff",
+
+
+    /* --color-bgtotal: "#1C1C1E", */
+
+
+    /* breakpoints */
+    --breakpoint-sm: 640px; /* mobile */
+    --breakpoint-md: 768px; /* tablet */
+    --breakpoint-lg: 1024px; /* laptop */
+    --breakpoint-xl: 1280px; /* desktop */
+    --breakpoint-2xl: 1536px;
+
+    /* ESPACIOS */
 
 
 
   /* 🎨 Light Theme (por defecto) */
   --color-body: #fff;
-  --color-text: #202020;
+  --color-text: #202020;  /*color textos */
   --color-carousel: #9955ff;
   --color-primary-light: rgb(52, 131, 235);
   --color-whiteBg: #dac1ff;
   --color-bg: rgb(255, 255, 255);
-  --color-bg-alpha: rgba(250, 250, 250, 0.3);
+  --color-bg-alpha: rgba(230, 230, 230, 0.3);  /*color links sidebar */
   --color-bg2: rgb(245, 245, 245);
   --color-bg3: #fff;
-  --color-bg4: #eaeaea;
+  --color-bg4: #dcdcdc;
   --color-bg5: #9046ff;
   --color-bgtotal: #edf3fb;
   --color-bgtgderecha: #fff;
@@ -86,4 +108,9 @@ body {
 
 @utility animate-flotar {
   animation: flotar 1.5s ease-in-out infinite alternate;
+}
+
+
+@utility animate-flotar-slow {
+  animation: flotar 1.7s ease-in-out infinite alternate;
 }
