@@ -33,7 +33,6 @@ export const useAuthStore = create((set) => ({
   },
 
   setSession: (session) => {
-    console.log("setSession", session);
     //actualizar el estado cuando supabase detecta sesion
     set({ isAuth: !!session, user: session?.user || null, loading: false }); // !!{..} = true || !!null = false
   },
