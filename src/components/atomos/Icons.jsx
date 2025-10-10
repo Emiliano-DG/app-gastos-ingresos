@@ -1,9 +1,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { RiArrowRightLine } from "react-icons/ri";
+import { RiVipCrownFill } from "react-icons/ri";
+import { IoIosArrowDown } from "react-icons/io";
+import { RiCloseLine } from "react-icons/ri";
 
 const icons = {
   inicio: FcGoogle,
   flecha: RiArrowRightLine,
+  corona: RiVipCrownFill,
+  flechaAbajo: IoIosArrowDown,
+  iconoCerrar: RiCloseLine,
 };
 
 export const Icon = ({ name, size = 15, className = "" }) => {

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --font-family-base: 'Poppins', sans-serif;
+  --font-family-base: "Poppins", sans-serif;
   --sidebar-width: 300px;
   --sidebar-width-initial: 10vw;
-  --sm-spacing: 8px;  /* USADO */
+  --sm-spacing: 8px; /* USADO */
   --md-spacing: 16px;
   --lg-spacing: 24px;
   --xl-spacing: 32px;
@@ -14,38 +14,39 @@
 
 body {
   font-family: var(--font-family-base);
+  background-color: var(--color-body);
 }
 
-
 @theme {
+  --color-Secundario: #dac1ff;
+  --color-Principal: #00f34a;
+  --color-bgtgderecha: #fff;
+  --color-selector: #bf94ff; /* USADO */
 
-    --color-Secundario: #DAC1FF;
-    --color-Principal: #00F34A;
-     --color-bgtgderecha: "#fff",
+  /* ZOMBRAS */
+  --shadow-gray: -2px 14px 20px -4px rgba(0, 0, 0, 0.4);
 
+  /* --shadow-gray: -2px 14px 20px -4px rgba(0,0,0,0.4);
+    -webkit-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);
+    -moz-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);`, */
 
-    /* --color-bgtotal: "#1C1C1E", */
+  /* breakpoints */
+  --breakpoint-sm: 640px; /* mobile */
+  --breakpoint-md: 768px; /* tablet */
+  --breakpoint-lg: 1024px; /* laptop */
+  --breakpoint-xl: 1280px; /* desktop */
+  --breakpoint-2xl: 1536px;
 
-
-    /* breakpoints */
-    --breakpoint-sm: 640px; /* mobile */
-    --breakpoint-md: 768px; /* tablet */
-    --breakpoint-lg: 1024px; /* laptop */
-    --breakpoint-xl: 1280px; /* desktop */
-    --breakpoint-2xl: 1536px;
-
-    /* ESPACIOS */
-
-
+  /* ESPACIOS */
 
   /* 🎨 Light Theme (por defecto) */
   --color-body: #fff;
-  --color-text: #202020;  /*color textos */
+  --color-text: #202020; /*color textos */
   --color-carousel: #9955ff;
   --color-primary-light: rgb(52, 131, 235);
   --color-whiteBg: #dac1ff;
   --color-bg: rgb(255, 255, 255);
-  --color-bg-alpha: rgba(230, 230, 230, 0.3);  /*color links sidebar */
+  --color-bg-alpha: rgba(230, 230, 230, 0.3); /*color links sidebar */
   --color-bg2: rgb(245, 245, 245);
   --color-bg3: #fff;
   --color-bg4: #dcdcdc;
@@ -109,7 +110,6 @@ body {
 @utility animate-flotar {
   animation: flotar 1.5s ease-in-out infinite alternate;
 }
-
 
 @utility animate-flotar-slow {
   animation: flotar 1.7s ease-in-out infinite alternate;

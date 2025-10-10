@@ -3,6 +3,7 @@ import { Home } from "@/pages/Home";
 import { Login } from "@/pages/Login";
 import { ProtectedRoute } from "../hooks/ProtectedRoute";
 import { useAuthStore } from "../store/AuthStore";
+import { Configuracion } from "../pages/Configuracion";
 
 export const MyRoutes = () => {
   const user = useAuthStore((state) => state.user);
@@ -16,6 +17,7 @@ export const MyRoutes = () => {
         }
       >
         <Route path="/" element={<Home />}></Route>
+        <Route path="/configurar" element={<Configuracion />}></Route>
       </Route>
     </Routes>
   );

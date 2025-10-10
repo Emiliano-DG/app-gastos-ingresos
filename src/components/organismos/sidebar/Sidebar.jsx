@@ -44,7 +44,8 @@ export const Sidebar = ({ state, setState }) => {
             key={label}
             to={to}
             className={({ isActive }) =>
-              `relative flex items-center text-text h-14 gap-2 my-1.5 px-[5%] py-2 rounded-md hover:bg-bg-alpha transition 
+              `relative flex items-center text-text h-14
+            gap-2 my-1.5 px-[5%] py-2 rounded-md hover:bg-bg-alpha transition 
             ${state ? "px-[5%] justify-start" : "px-0 justify-center"}
             ${
               isActive
