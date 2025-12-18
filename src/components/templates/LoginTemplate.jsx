@@ -27,7 +27,7 @@ export const LoginTemplate = ({
       <BtnSave
         titulo={btnTitulo}
         icon={() => <Icon name="inicio" />}
-        action={() => signInWithGoogle()}
+        action={signInWithGoogle}
       />
     </div>
   );

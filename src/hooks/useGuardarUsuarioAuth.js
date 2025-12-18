@@ -30,10 +30,6 @@ export const useGuardarUsuarioAuth = () => {
             picture: user?.user_metadata.avatar_url,
           };
           await crearUsuarioConAuth(dataProvider, user.id);
-
-          console.log("Usuario nuevo guardado en la tabla.");
-        } else {
-          console.log("El usuario ya existe, no se inserta de nuevo.");
         }
       } catch (err) {
         console.error("Error en guardarUsuario:", err.message);

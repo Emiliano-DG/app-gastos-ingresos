@@ -10,7 +10,8 @@ function App() {
   useAuthListener(); // escucha los cambios de sesión en Supabase y actualiza tu AuthStore.
   useGuardarUsuarioAuth(); // guarda en la tabla usuarios si hay login
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname } = useLocation(); // obtener la ruta actual
+
   return (
     <>
       {pathname != "/login" ? (

@@ -2,14 +2,7 @@
 
 :root {
   --font-family-base: "Poppins", sans-serif;
-  --sidebar-width: 300px;
-  --sidebar-width-initial: 10vw;
-  --sm-spacing: 8px; /* USADO */
-  --md-spacing: 16px;
-  --lg-spacing: 24px;
-  --xl-spacing: 32px;
-  --xxl-spacing: 48px;
-  --border-radius: 6px;
+  --sm-spacing: 8px;
 }
 
 body {
@@ -25,10 +18,6 @@ body {
 
   /* ZOMBRAS */
   --shadow-gray: -2px 14px 20px -4px rgba(0, 0, 0, 0.4);
-
-  /* --shadow-gray: -2px 14px 20px -4px rgba(0,0,0,0.4);
-    -webkit-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);
-    -moz-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);`, */
 
   /* breakpoints */
   --breakpoint-sm: 640px; /* mobile */
@@ -50,7 +39,7 @@ body {
   --color-bg2: rgb(245, 245, 245);
   --color-bg3: #fff;
   --color-bg4: #dcdcdc;
-  --color-bg5: #9046ff;
+  --color-bg5: #1e3a8a;
   --color-bgtotal: #edf3fb;
   --color-bgtgderecha: #fff;
   --color-toggle: #f9743b;
@@ -86,7 +75,7 @@ body {
   --color-bg2: rgb(30, 30, 30);
   --color-bg3: #2c2c2e;
   --color-bg4: #4e4e50;
-  --color-bg5: #bf94ff;
+  --color-bg5: #3b82f6;
   --color-bgtotal: #1c1c1e;
   --color-bgtgderecha: #21252b;
   --color-toggle: rgb(52, 131, 235);
@@ -113,4 +102,24 @@ body {
 
 @utility animate-flotar-slow {
   animation: flotar 1.7s ease-in-out infinite alternate;
+}
+
+@layer base {
+  .sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(120, 120, 120, 0.4);
+    border-radius: 9999px;
+  }
+
+  .sidebar-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 120, 0.4) transparent;
+  }
 }

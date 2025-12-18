@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { supabase } from "../supabase/supabase.config";
 
+// Store de autenticación usando Zustand
 export const useAuthStore = create((set) => ({
   isAuth: false,
   user: null,
@@ -12,6 +13,9 @@ export const useAuthStore = create((set) => ({
         provider: "google",
         options: {
           redirectTo: "http://localhost:5173/", // ajusta al puerto de tu proyecto
+          queryParams: {
+            prompt: "select_account", // para forzar selección de cuenta
+          },
         },
       });
       if (error) throw error;
@@ -26,7 +30,6 @@ export const useAuthStore = create((set) => ({
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      // set({ isAuth: false, user: null });
     } catch (err) {
       console.error("Error en logout", err.message);
     }

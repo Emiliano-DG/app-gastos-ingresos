@@ -15,6 +15,7 @@ export const SidebarCard = ({ isOpen }) => {
         {/* CIRCULOS DE DECORACION */}
         <div className="absolute bg-whiteBg rounded-[50%] opacity-70 h-full w-full top-[-80px] left-[-80px]"></div>
         <div className="absolute bg-whiteBg rounded-[50%] opacity-70 h-32 w-32 bottom-[-80px] right-[-70px] z-10"></div>
+        {/* //TODO: ver como mejorar texto para tema dark */}
         <h3 className="text-xs mt-4 py-4 px-0 font-semibold text-black">
           Centro de ayuda
         </h3>
