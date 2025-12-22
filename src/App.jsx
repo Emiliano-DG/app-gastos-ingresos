@@ -6,11 +6,25 @@ import { MenuHambur } from "./components/organismos/MenuHambur";
 import { useGuardarUsuarioAuth } from "./hooks/useGuardarUsuarioAuth";
 import { useLocation } from "react-router-dom";
 
+import { useQuery } from "@tanstack/react-query";
+import { usuarioStore } from "./store/usuarioStore";
+
 function App() {
   useAuthListener(); // escucha los cambios de sesión en Supabase y actualiza tu AuthStore.
   useGuardarUsuarioAuth(); // guarda en la tabla usuarios si hay login
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation(); // obtener la ruta actual
+  const { mostrarUsuarios, datausuarios } = usuarioStore(); // obtener la función mostrarUsuarios
+
+  // Usar useQuery para obtener los usuarios y mantenerlos actualizados
+  const { isLoading, error } = useQuery({
+    queryKey: ["mostrar usuarios"],
+    queryFn: mostrarUsuarios,
+  });
+
+  //TODO: hacer un spinner o algo mientras carga
+  if (isLoading) return <div>Cargando usuarios...</div>;
+  if (error) return <div>Error al cargar usuarios: {error.message}</div>;
 
   return (
     <>

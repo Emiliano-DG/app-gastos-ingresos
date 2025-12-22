@@ -29,21 +29,39 @@ body {
   /* ESPACIOS */
 
   /* 🎨 Light Theme (por defecto) */
-  --color-body: #fff;
-  --color-text: #202020; /*color textos */
-  --color-carousel: #9955ff;
+  /* --color-body: #fff; */
+  /* --color-text: #202020; color textos */
+  /* --color-carousel: #9955ff;
   --color-primary-light: rgb(52, 131, 235);
   --color-whiteBg: #dac1ff;
-  --color-bg: rgb(255, 255, 255);
-  --color-bg-alpha: rgba(230, 230, 230, 0.3); /*color links sidebar */
-  --color-bg2: rgb(245, 245, 245);
+  --color-bg: rgb(255, 255, 255); */
+  /* --color-bg-alpha: rgba(230, 230, 230, 0.3); color links sidebar */
+  /* --color-bg2: rgb(245, 245, 245);
   --color-bg3: #fff;
   --color-bg4: #dcdcdc;
   --color-bg5: #1e3a8a;
   --color-bgtotal: #edf3fb;
   --color-bgtgderecha: #fff;
   --color-toggle: #f9743b;
-  --color-subtitle: #2c2c2c;
+  --color-subtitle: #2c2c2c; */
+
+  /* 🎨 Dark Theme */
+
+  --color-body: #202020;
+  --color-text: #fff;
+  --color-carousel: #9955ff;
+  --color-primary-dark: rgb(52, 131, 235);
+  --color-whiteBg: #dac1ff;
+  --color-bg: #2c2c2e;
+  --color-bg-alpha: rgba(0, 0, 0, 0.3);
+  --color-bg2: rgb(30, 30, 30);
+  --color-bg3: #2c2c2e;
+  --color-bg4: #4e4e50;
+  --color-bg5: #3b82f6;
+  --color-bgtotal: #1c1c1e;
+  --color-bgtgderecha: #21252b;
+  --color-toggle: rgb(52, 131, 235);
+  --color-subtitle: #b7b7b7;
 
   --font-xs: 0.75em;
   --font-sm: 0.875em;

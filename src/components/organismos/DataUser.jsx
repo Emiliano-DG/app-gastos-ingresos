@@ -27,6 +27,7 @@ export const DataUser = ({ state, setState }) => {
         />
       </div>
       <div>
+        {/* // Corona de estado */}
         <BtnCircular
           icon={<Icon name="corona" />}
           traslatex="translate-x-[-24px]"

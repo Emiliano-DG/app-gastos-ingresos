@@ -45,39 +45,39 @@ export const DataDesplegableTipo = [
 export const LinksArray = [
   {
     label: "Home",
-    icon: <AiOutlineHome size={25} />,
+    icon: <AiOutlineHome size={23} />,
     to: "/",
   },
   {
     label: "Categorias",
-    icon: <MdOutlineAnalytics size={25} />,
+    icon: <MdOutlineAnalytics size={23} />,
     to: "/categorias",
   },
   {
     label: "Movimientos",
-    icon: <AiOutlineApartment size={25} />,
+    icon: <AiOutlineApartment size={23} />,
     to: "/movimientos",
   },
   {
     label: "Informes",
-    icon: <MdOutlineAnalytics size={25} />,
+    icon: <MdOutlineAnalytics size={23} />,
     to: "/informes",
   },
   {
     label: "Dashboard",
-    icon: <RiDashboard3Line size={25} />,
+    icon: <RiDashboard3Line size={23} />,
     to: "/dashboard",
   },
 ];
 export const SecondarylinksArray = [
   {
     label: "Configuración",
-    icon: <AiOutlineSetting size={25} />,
+    icon: <AiOutlineSetting size={23} />,
     to: "/configurar",
   },
   {
     label: "Acerca de",
-    icon: <TbPig size={25} />,
+    icon: <TbPig size={23} />,
     to: "/acercade",
   },
 ];
