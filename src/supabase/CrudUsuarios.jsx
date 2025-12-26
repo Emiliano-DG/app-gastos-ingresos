@@ -25,13 +25,12 @@ export const MostrarUsuarios = async () => {
       .eq("idauth_supabase", await ObtenerIdAuthSupabase());
 
     if (error) {
-      console.error("Error de Supabase al mostrar usuarios:", error.message);
-      return null;
+      throw new Error(error.message);
     }
     return data[0];
   } catch (err) {
     console.error("Error inesperado al mostrar usuarios:", err.message);
-    return null;
+    throw err;
   }
 };
 

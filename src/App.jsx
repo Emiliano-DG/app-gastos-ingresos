@@ -14,7 +14,7 @@ function App() {
   useGuardarUsuarioAuth(); // guarda en la tabla usuarios si hay login
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation(); // obtener la ruta actual
-  const { mostrarUsuarios, datausuarios } = usuarioStore(); // obtener la función mostrarUsuarios
+  const { mostrarUsuarios, datausuario } = usuarioStore(); // obtener la función mostrarUsuarios
 
   // Usar useQuery para obtener los usuarios y mantenerlos actualizados
   const { isLoading, error } = useQuery({

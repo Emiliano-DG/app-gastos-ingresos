@@ -2,10 +2,10 @@ import { create } from "zustand";
 import { MostrarUsuarios } from "../supabase/CrudUsuarios";
 
 export const usuarioStore = create((set) => ({
-  datausuarios: [],
+  datausuario: null,
   mostrarUsuarios: async () => {
     const response = await MostrarUsuarios();
-    set({ datausuarios: response });
+    set({ datausuario: response });
     return response; // realizamos el return para usar tanStack
   },
 }));
