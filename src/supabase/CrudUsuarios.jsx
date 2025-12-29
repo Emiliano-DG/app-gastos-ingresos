@@ -1,5 +1,6 @@
 import { supabase } from "../supabase/supabase.config";
 import { ObtenerIdAuthSupabase } from "./GlobalSupabase";
+import Swal from "sweetalert2";
 
 //INSERTA DATOS EN LA TABLA
 export const InsertarUsuario = async (p) => {
@@ -17,6 +18,7 @@ export const InsertarUsuario = async (p) => {
   }
 };
 
+//OBTIENE DATOS DE LA TABLA
 export const MostrarUsuarios = async () => {
   try {
     const { data, error } = await supabase
@@ -34,6 +36,7 @@ export const MostrarUsuarios = async () => {
   }
 };
 
+//INSERTA DATOS EN LA TABLA
 export const crearUsuarioConAuth = async (dataProvider, idAuthSupabase) => {
   const p = {
     nombres: dataProvider.name,
@@ -41,4 +44,26 @@ export const crearUsuarioConAuth = async (dataProvider, idAuthSupabase) => {
     idauth_supabase: idAuthSupabase,
   };
   return await InsertarUsuario(p);
+};
+
+export const EditarTemaMonedaUser = async (p) => {
+  try {
+    const { error } = await supabase.from("usuarios").update(p).eq("id", p.id);
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    //mostrar notificacion
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Datos modificados",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } catch (err) {
+    console.error("Error inesperado al editar tema y moneda:", err.message);
+    throw err;
+  }
 };

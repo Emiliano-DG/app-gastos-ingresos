@@ -26,7 +26,7 @@ export const LoginTemplate = ({
       <p className="text-[#909090] font-lg text-center">{subtitulo}</p>
       <BtnSave
         titulo={btnTitulo}
-        icon={() => <Icon name="inicio" />}
+        icon={<Icon name="inicio" />}
         action={signInWithGoogle}
       />
     </div>

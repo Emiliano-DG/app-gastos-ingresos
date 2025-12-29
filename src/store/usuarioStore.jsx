@@ -1,5 +1,8 @@
 import { create } from "zustand";
-import { MostrarUsuarios } from "../supabase/CrudUsuarios";
+import {
+  EditarTemaMonedaUser,
+  MostrarUsuarios,
+} from "../supabase/CrudUsuarios";
 
 export const usuarioStore = create((set) => ({
   datausuario: null,
@@ -7,5 +10,8 @@ export const usuarioStore = create((set) => ({
     const response = await MostrarUsuarios();
     set({ datausuario: response });
     return response; // realizamos el return para usar tanStack
+  },
+  editartemamonedaUser: async (p) => {
+    await EditarTemaMonedaUser(p);
   },
 }));

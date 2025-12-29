@@ -25,6 +25,7 @@ function App() {
   //TODO: hacer un spinner o algo mientras carga
   if (isLoading) return <div>Cargando usuarios...</div>;
   if (error) return <div>Error al cargar usuarios: {error.message}</div>;
+  if (!datausuario) return null;
 
   return (
     <>

@@ -1,7 +1,7 @@
 export const BtnSave = ({
   titulo,
   action,
-  icon: Icon,
+  icon,
   color = "bg-Secundario",
   type = "button",
 }) => {
@@ -12,7 +12,7 @@ export const BtnSave = ({
       onClick={type === "button" ? action : undefined}
       type={type}
     >
-      {Icon && <Icon />}
+      {icon && icon}
       <span>{titulo}</span>
     </button>
   );

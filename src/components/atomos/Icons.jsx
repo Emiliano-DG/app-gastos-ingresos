@@ -3,6 +3,7 @@ import { RiArrowRightLine } from "react-icons/ri";
 import { RiVipCrownFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiCloseLine } from "react-icons/ri";
+import { BiSave } from "react-icons/bi";
 
 const icons = {
   inicio: FcGoogle,
@@ -10,6 +11,7 @@ const icons = {
   corona: RiVipCrownFill,
   flechaAbajo: IoIosArrowDown,
   iconoCerrar: RiCloseLine,
+  iconoGuardar: BiSave,
 };
 
 export const Icon = ({ name, size = 15, className = "" }) => {

@@ -6,9 +6,7 @@ const hoverColors = {
 };
 
 export const Selector = ({
-  hoverColor = "hover:bg-selector",
   borderColor = "border-selector",
-
   funcion,
   texto1,
   texto2,
