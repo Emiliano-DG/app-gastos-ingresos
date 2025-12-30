@@ -56,7 +56,6 @@ export const EditarTemaMonedaUser = async (p) => {
 
     //mostrar notificacion
     Swal.fire({
-      position: "top-end",
       icon: "success",
       title: "Datos modificados",
       showConfirmButton: false,

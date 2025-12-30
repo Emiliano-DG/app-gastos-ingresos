@@ -7,7 +7,7 @@ const ListaGenerica = ({ data, setState, setSelectTema }) => {
   };
 
   return (
-    <div className="flex flex-col bg-bgtotal text-text  w-full md:w-[400px] p-2.5 rounded-[10px]">
+    <div className="flex flex-col bg-bgtotal text-text  w-full md:w-[400px] p-2.5 rounded-[10px] border-[3px] border-[#3a3a3a]">
       <section>
         <span onClick={setState} className="cursor-pointer ">
           <Icon size={23} name="iconoCerrar" />

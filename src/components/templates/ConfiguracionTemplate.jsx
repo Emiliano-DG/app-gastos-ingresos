@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "../organismos/Header";
 import { Selector } from "../organismos/Selector";
 import { ListaPaises } from "../organismos/ListaPaises";
@@ -13,7 +13,9 @@ export const ConfiguracionTemplate = () => {
   const [state, setState] = useState(false); //estado del selector
   const [stateListaPaises, setStateListaPaises] = useState(false); //estado de la lista de paises
   const [stateListaTemas, setStateListaTemas] = useState(false);
-  const [selectTema, setSelectTema] = useState(""); //tema seleccionado
+
+  const [temaActual, setTemaActual] = useState(null);
+
   const { datausuario, editartemamonedaUser } = usuarioStore(); // obtener los datos del usuario
 
   // Datos para el selector de paises
@@ -22,29 +24,48 @@ export const ConfiguracionTemplate = () => {
   const paisSeleccionado = `${pais} (${moneda})`;
 
   //Tema seleccionado
-  const iconodb = datausuario.tema === "1" ? "🌑" : "☀️";
-  const temadb = datausuario.tema === "1" ? "dark" : "light";
-  const temaInicial = selectTema.tema ? selectTema.tema : temadb;
-  const iconoInicial = selectTema.icono ? selectTema.icono : iconodb;
-  const temaSeleccionado = iconoInicial + " " + temaInicial;
 
-  //Funcion ditar
+  const temaSeleccionado = temaActual
+    ? `${temaActual.icono} ${temaActual.descripcion}`
+    : "";
+
+  //Funcion editar
   const editar = async () => {
-    const themeElegido = selectTema.desciption === "dark" ? "1" : "0";
+    if (!temaActual) return;
+
+    const themeElegido = temaActual.descripcion === "dark" ? "1" : "0";
+    const p = {
+      tema: themeElegido,
+      moneda: moneda,
+      pais: pais,
+      id: datausuario.id,
+    };
+    await editartemamonedaUser(p);
   };
 
+  //Trae el tema de la BD
+  useEffect(() => {
+    if (datausuario) {
+      setTemaActual({
+        descripcion: datausuario.tema === "1" ? "dark" : "light",
+        icono: datausuario.tema === "1" ? "🌑" : "☀️",
+      });
+    }
+  }, [datausuario]);
+
   return (
-    <div className=" min-h-screen p-3.5 w-full text-text grid grid-rows-[100px_100px_60px_auto]">
+    <div className=" min-h-screen p-3.5 w-full text-text grid grid-rows-[80px_auto]">
       {/* HEADER */}
-      <header className="bg-amber-300 flex items-center">
+      <header className=" flex items-center">
         <Header state={state} setState={setState} />
       </header>
 
-      <section className="bg-bg2">AJUSTES</section>
-
-      <section className="bg-bg3 relative w-full flex justify-center ">
+      <section className=" relative w-full flex justify-center self-center ">
         <div className="flex flex-col gap-7 item-center">
-          <div className="flex flex-row gap-4 items-center">
+          <h1 className="justify-center flex items-center font-bold text-4xl">
+            AJUSTES
+          </h1>
+          <div className=" grid grid-cols-[80px_1fr] items-center">
             <span>Moneda:</span>
             <Selector
               texto1={paisSeleccionado}
@@ -52,8 +73,8 @@ export const ConfiguracionTemplate = () => {
             />
           </div>
 
-          <div className="flex flex-row gap-4 items-center relative">
-            <span>Tema</span>
+          <div className="grid grid-cols-[80px_1fr] gap-4 items-center relative">
+            <span>Tema:</span>
             <Selector
               texto1={temaSeleccionado}
               funcion={() => setStateListaTemas(!stateListaTemas)}
@@ -63,6 +84,7 @@ export const ConfiguracionTemplate = () => {
             titulo="Guardar"
             color="bg-selector"
             icon={<Icon name="iconoGuardar" size={20} />}
+            action={editar}
           />
         </div>
 
@@ -76,17 +98,15 @@ export const ConfiguracionTemplate = () => {
         )}
         {/* lista de temas */}
         {stateListaTemas && (
-          <div className="absolute mt-10 top-[150%] w-full flex justify-center">
+          <div className="absolute mt-10 top-[18%] w-full flex justify-center">
             <ListaGenerica
               data={TemasData}
               setState={() => setStateListaTemas(!stateListaTemas)}
-              setSelectTema={setSelectTema}
+              setSelectTema={setTemaActual}
             />
           </div>
         )}
       </section>
-
-      <section className="bg-bg4"></section>
     </div>
   );
 };

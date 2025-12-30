@@ -20,7 +20,7 @@ export const ListaPaises = ({ setSelect, setState }) => {
     setDataResult(filtrado);
   };
   return (
-    <div className="mt-10 absolute top-[30%] w-full flex flex-col bg-bgtotal rounded-[10px] border-[3px] border-[#3a3a3a] p-2.5 gap-2.5 text-text transition duration-300 md:w-[400px]">
+    <div className="mt-10 absolute top-[4%] w-full flex flex-col bg-bgtotal rounded-[10px] border-[3px] border-[#3a3a3a] p-2.5 gap-2.5 text-text transition duration-300 md:w-[400px]">
       <header className="flex items-center justify-between bg-inherit">
         <span>Busca tu pais</span>
         <span onClick={setState} className="cursor-pointer ">
