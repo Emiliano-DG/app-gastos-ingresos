@@ -15,6 +15,10 @@ body {
   --color-Principal: #00f34a;
   --color-bgtgderecha: #fff;
   --color-selector: #bf94ff; /* USADO */
+  --color-ingresos: #53b257; /* USADO */
+  --color-bgingresos: #e6ffe7; /* USADO */
+  --color-gastos: #fe6156; /* USADO */
+  --color-bggastos: #fbcbc9; /* USADO */
 
   /* ZOMBRAS */
   --shadow-gray: -2px 14px 20px -4px rgba(0, 0, 0, 0.4);
@@ -25,8 +29,6 @@ body {
   --breakpoint-lg: 1024px; /* laptop */
   --breakpoint-xl: 1280px; /* desktop */
   --breakpoint-2xl: 1536px;
-
-  /* ESPACIOS */
 
   /* 🎨 Light Theme (por defecto) */
   /* --color-body: #fff; */
@@ -122,6 +124,7 @@ body {
   animation: flotar 1.7s ease-in-out infinite alternate;
 }
 
+/* Estilos para scroll personalizado en sidebar */
 @layer base {
   .sidebar-scroll::-webkit-scrollbar {
     width: 6px;

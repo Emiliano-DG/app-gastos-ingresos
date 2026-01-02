@@ -98,7 +98,7 @@ export const ConfiguracionTemplate = () => {
         )}
         {/* lista de temas */}
         {stateListaTemas && (
-          <div className="absolute mt-10 top-[18%] w-full flex justify-center">
+          <div className="absolute mt-10 top-[62%] w-full flex justify-center  ">
             <ListaGenerica
               data={TemasData}
               setState={() => setStateListaTemas(!stateListaTemas)}
