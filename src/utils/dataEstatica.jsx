@@ -31,12 +31,14 @@ export const DesplegableUser = [
 export const DataDesplegableTipo = [
   {
     text: "Categorias gastos",
-    color: "#fe6156",
+    color: "bg-gastos",
+    backgound: "bg-bggastos",
     tipo: "g",
   },
   {
     text: "Categorias ingresos",
-    color: "#53B257",
+    color: "bg-ingresos",
+    backgound: "bg-bgingresos",
     tipo: "i",
   },
 ];

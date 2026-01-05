@@ -10,7 +10,7 @@ export const ListaMenuDesplegable = ({ data, top, funcion }) => {
           <ItemsDesplegables
             key={index}
             item={item}
-            funcion={() => funcion(item.tipo)}
+            funcion={() => funcion(item)}
           />
         );
       })}

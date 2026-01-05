@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const useOperaciones = create((set, get) => ({
+export const useOperaciones = create((set) => ({
   tipo: "i",
   tituloBtnDes: "Categorias ingresos",
   colorCategoria: "bg-ingresos",
@@ -8,9 +8,9 @@ export const useOperaciones = create((set, get) => ({
   setTipo: (tipo) => {
     set({
       tipo,
-      tituloBtnDes: tipo === "i" ? "Categorias ingresos" : "Categorias gastos",
-      colorCategoria: tipo === "i" ? "bg-ingresos" : "bg-gastos",
-      bgCategoria: tipo === "i" ? "bg-bgingresos" : "bg-bggastos",
+      tituloBtnDes: tipo.text,
+      colorCategoria: tipo.color,
+      bgCategoria: tipo.backgound,
     });
   },
 }));

@@ -4,6 +4,7 @@ import { RiVipCrownFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
+import { CgMathPlus } from "react-icons/cg";
 
 const icons = {
   inicio: FcGoogle,
@@ -12,6 +13,7 @@ const icons = {
   flechaAbajo: IoIosArrowDown,
   iconoCerrar: RiCloseLine,
   iconoGuardar: BiSave,
+  iconoAgregar: CgMathPlus,
 };
 
 export const Icon = ({ name, size = 15, className = "" }) => {
