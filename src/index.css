@@ -144,3 +144,83 @@ body {
     scrollbar-color: rgba(120, 120, 120, 0.4) transparent;
   }
 }
+
+/* Components (tablas, botones, etc) */
+
+@layer components {
+  /* OCULTAR THEAD EN MOBILE */
+  .responsive-table thead {
+    display: none;
+  }
+
+  /* MOBILE: estructura tipo cards */
+  .responsive-table,
+  .responsive-table tbody,
+  .responsive-table tr,
+  .responsive-table th,
+  .responsive-table td {
+    display: block;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .responsive-table tr {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .responsive-table th,
+  .responsive-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* LABELS MOBILE (ARRIBA DEL VALOR) */
+  .responsive-table td[data-title]::before,
+  .responsive-table th[scope="row"]::before {
+    content: attr(data-title);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+    .responsive-table {
+      display: table;
+      width: 100%;
+    }
+
+    .responsive-table thead {
+      display: table-header-group;
+    }
+
+    .responsive-table tbody {
+      display: table-row-group;
+    }
+
+    .responsive-table tr {
+      display: table-row;
+      border: none;
+    }
+
+    .responsive-table th,
+    .responsive-table td {
+      display: table-cell;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .responsive-table td[data-title]::before,
+    .responsive-table th[scope="row"]::before {
+      content: none;
+    }
+  }
+
+  /* TH del header */
+  .th-head {
+    @apply border-b-2 border-[rgba(115,115,115,0.32)] font-normal text-center text-text p-2;
+  }
+}

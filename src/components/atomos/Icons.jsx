@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
 import { CgMathPlus } from "react-icons/cg";
+import { RiDeleteBin2Line, RiEditLine } from "react-icons/ri";
 
 const icons = {
   inicio: FcGoogle,
@@ -14,6 +15,8 @@ const icons = {
   iconoCerrar: RiCloseLine,
   iconoGuardar: BiSave,
   iconoAgregar: CgMathPlus,
+  iconeditarTabla: RiEditLine,
+  iconeliminarTabla: RiDeleteBin2Line,
 };
 
 export const Icon = ({ name, size = 15, className = "" }) => {

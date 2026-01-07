@@ -6,8 +6,9 @@ import { ListaMenuDesplegable } from "../moleculas/ListaMenuDesplegable";
 import { DataDesplegableTipo } from "../../utils/dataEstatica";
 import BtnFiltro from "../moleculas/BtnFiltro";
 import { Icon } from "../atomos/Icons";
+import { TablaCategorias } from "../organismos/tablas/TablaCategorias";
 
-export const CategoriasTemplate = () => {
+export const CategoriasTemplate = ({ data }) => {
   const [state, setState] = useState(false); //estado del selector
   const [stateTipo, setStateTipo] = useState(false); //estado del desplegable tipo
   const { tituloBtnDes, colorCategoria, bgCategoria, setTipo } =
@@ -53,7 +54,9 @@ export const CategoriasTemplate = () => {
           />
         </div>
       </section>
-      <section className=" bg-bg4 w-full flex justify-center  "></section>
+      <section className=" bg-bg4 w-full flex justify-center  ">
+        <TablaCategorias data={data} />
+      </section>
     </div>
   );
 };

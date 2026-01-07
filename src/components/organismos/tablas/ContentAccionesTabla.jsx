@@ -1,30 +1,19 @@
-import styled from "styled-components";
-import { AccionTabla } from "../../../index";
-import { v } from "../../../styles/variables";
+import { Icon } from "../../atomos/Icons";
+import { AccionTabla } from "./AccionesTabla";
+
 export function ContentAccionesTabla({ funcionEditar, funcionEliminar }) {
   return (
-    <Container>
+    <div className="flex flex-wrap gap-2.5 justify-start md:justify-center">
       <AccionTabla
         funcion={funcionEditar}
-        fontSize="18px"
         color="#7d7d7d"
-        icono={<v.iconeditarTabla />}
+        icono={<Icon name="iconeditarTabla" size={18} />}
       />
       <AccionTabla
         funcion={funcionEliminar}
-        fontSize="20px"
         color="#f76e8e"
-        icono={<v.iconeliminarTabla />}
+        icono={<Icon name="iconeliminarTabla" size={20} />}
       />
-    </Container>
+    </div>
   );
 }
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  @media (max-width: 48em) {
-    justify-content: end;
-  }
-`;

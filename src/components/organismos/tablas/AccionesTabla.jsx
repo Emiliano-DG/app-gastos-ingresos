@@ -1,14 +1,11 @@
-import styled from "styled-components";
-
 export function AccionTabla({ funcion, icono, color, fontSize }) {
   return (
-    <Container onClick={funcion} color={color} fontSize={fontSize}>
+    <span
+      onClick={funcion}
+      className="cursor-pointer hover:opacity-70"
+      style={{ color: color }}
+    >
       {icono}
-    </Container>
+    </span>
   );
 }
-const Container = styled.span`
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize};
-  cursor: pointer;
-`;

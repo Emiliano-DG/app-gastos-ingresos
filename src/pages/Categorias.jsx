@@ -4,9 +4,9 @@ import { useCategoriasStore } from "../store/CategoriasStore";
 import { usuarioStore } from "../store/usuarioStore";
 
 export const Categorias = () => {
-  const { datacategorias, mostrarCategorias } = useCategoriasStore();
+  const { mostrarCategorias } = useCategoriasStore();
   const { datausuario } = usuarioStore();
-  const { isLoading, error } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["categorias", datausuario?.id, "i"],
     queryFn: () => mostrarCategorias({ idusuario: datausuario.id, tipo: "i" }),
     enabled: !!datausuario?.id,
@@ -22,7 +22,7 @@ export const Categorias = () => {
 
   return (
     <div className="h-screen ">
-      <CategoriasTemplate data={datacategorias} />
+      <CategoriasTemplate data={data} />
     </div>
   );
 };
